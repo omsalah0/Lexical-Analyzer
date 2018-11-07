@@ -1,0 +1,9 @@
+
+    INT x ;
+    READ ( x ) ;
+    INT y ;
+    READ ( y ) ;
+    INT z ;
+    D = 2 ;
+    z = func ( x , y ) + function ( y , x ) ;
+    WRITE ( z ) ; 
