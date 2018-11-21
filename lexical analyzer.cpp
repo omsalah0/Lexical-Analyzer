@@ -94,24 +94,23 @@ char chh, source[100], operators[] = "+-*/%=", separators[] = ";,()", digit[] = 
 	   }
     
 	   if(chh=='0' || chh=='1' ||chh=='2' || chh=='3' || chh=='4' || chh=='5' || chh=='6' || chh=='7' || chh=='8' || chh=='9'||chh==' '||chh==';'||chh=='\n'){
-		  if(chh=='0' || chh=='1' ||chh=='2' || chh=='3' || chh=='4' || chh=='5' || chh=='6' || chh=='7' || chh=='8' || chh=='9'){
-			 digits[k++] = chh;}
-		  if((chh==' '||chh==' \n'||chh==';')&&(k!=0)){
-			 digits[k] = '\0'; //null terminated 
-			 k = 0;
-		  
+				if(chh=='0' || chh=='1' ||chh=='2' || chh=='3' || chh=='4' || chh=='5' || chh=='6' || chh=='7' || chh=='8' || chh=='9'){
+				    digits[k++] = chh;}
+				    if((chh==' '||chh==' \n'||chh==';')&&(k!=0)){
+					   digits[k] = '\0'; //null terminated 
+						   k = 0;
+					   cout<<digits<<" is digit\n";
+				    }
+				    }
 
 	   //cout<<digits<<" is digital\n";   
 	   
-		  }
+		 
+	    if(isalpha(chh)){
+		 source[j++] = chh; 
+		   }
     
-	   }
-	    if(isalnum(chh)){
-		   
-		  source[j++] = chh;
-	   }
-    
-		  else if((chh == ' ' || chh == '\n') && (j != 0)){
+		   else if((chh == ' ' || chh == '\n') && (j != 0)){
     
 			 source[j] = '\0'; //null terminated string , in std::string not null terminated you make comiler to print as it be.
 
@@ -119,19 +118,18 @@ char chh, source[100], operators[] = "+-*/%=", separators[] = ";,()", digit[] = 
 
 			 if(isKeyword(source) == true)
 		
-				 cout<<source<<" is keyword\n";
+			 { cout<<source<<" is keyword\n";}
 
 			 else if(isMultioperator(source) == true)
 		  
-				cout<<source<<" is multiseparator\n";
+			 {cout<<source<<" is multiseparator\n";}
 	   
-			 else if(source == digits){cout<<digits<<" is digits\n";}
-
+			 //else if(source == digits){cout<<digits<<" is digits\n";}
 			 else
 				cout<<source<<" is identifier\n";
     
 		  //remainder separator function
-	   
+		  
 	  
     
    
